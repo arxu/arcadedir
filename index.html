@@ -3,7 +3,7 @@
 
   <head>
     <title>Directions to Arcade</title>
-    <meta name="viewport" content="initial-scale=1.0">
+    <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
     <meta charset="utf-8">
     <style>
       #map {
@@ -36,6 +36,18 @@
         line-height: 30px;
         padding-left: 10px;
         font-size: 12px;
+      }
+
+      @media screen and (max-width:799){
+        select,
+        textarea,
+        input {
+          font-size: 16px;
+        }
+
+        #floating-panel {
+          width: 100px;
+        }
       }
 
     </style>
@@ -117,7 +129,8 @@
           center: {
             lat: 51.5074,
             lng: -0.1278
-          } // Centre on London
+          }, // Centre on London
+          gestureHandling: 'greedy'
         });
         directionsDisplay.setMap(map);
 
